@@ -13,6 +13,9 @@ async fn main() -> anyhow::Result<()> {
     let names = pod_list.into_iter()
         .map(|pod| pod.metadata.name.unwrap_or("".into()))
         .collect::<Vec<String>>();
-    println!("{names:?}");
+    // println!("{names:?}");
+    for name in &names {
+        println!("{:?}", name);
+    }
     Ok(())
 }
